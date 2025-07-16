@@ -1,0 +1,104 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "mango",
+    "scopeName": "source.mango",
+    "patterns": [
+        {
+            "comment": "Comments",
+            "name": "comment.line.double-slash.mango",
+            "match": "//.*$"
+        },
+        {
+            "comment": "General Language Keywords",
+            "name": "keyword.control.mango",
+            "match": "\\b(let|function)\\b"
+        },
+        {
+            "comment": "UI Element Keywords",
+            "name": "keyword.control.element.mango",
+            "match": "\\b(window|row|column|button|text|textbox|checkbox|radiobutton|toggleswitch|calendar|togglebutton)\\b"
+        },
+        {
+            "comment": "Property Names - Dimensions",
+            "name": "entity.other.attribute-name.dimension.mango",
+            "match": "\\b(width|height|margin)\\b"
+        },
+        {
+            "comment": "Property Names - Text Properties",
+            "name": "entity.other.attribute-name.text.mango",
+            "match": "\\b(color|bgcolor|fontfamily|fontsize|fontweight|fontstyle|lineheight|textalign|texttrim)\\b"
+        },
+        {
+            "comment": "Property Names - Boolean Properties",
+            "name": "entity.other.attribute-name.boolean.mango",
+            "match": "\\b(wrap|hidden)\\b"
+        },
+        {
+            "comment": "Font Style Values",
+            "name": "support.constant.fontstyle.mango",
+            "match": "\\b(italic|underline|strikethrough)\\b"
+        },
+        {
+            "comment": "Text Alignment Values",
+            "name": "support.constant.textalign.mango",
+            "match": "\\b(center|left|right)\\b"
+        },
+        {
+            "comment": "Text Trim Values",
+            "name": "support.constant.texttrim.mango",
+            "match": "\\b(word|character|notrim)\\b"
+        },
+        {
+            "comment": "Color Values - Named Colors",
+            "name": "support.constant.color.mango",
+            "match": "\\b(red|blue|green|yellow|pink|black|white)\\b"
+        },
+        {
+            "comment": "Color Values - Hex Colors",
+            "name": "constant.numeric.hex.mango",
+            "match": "#[0-9a-fA-F]{3,6}\\b"
+        },
+        {
+            "comment": "Boolean Values",
+            "name": "constant.language.boolean.mango",
+            "match": "\\b(true|false)\\b"
+        },
+        {
+            "comment": "Numbers",
+            "name": "constant.numeric.mango",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+        },
+        {
+            "comment": "String literals",
+            "name": "string.quoted.double.mango",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.mango",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        {
+            "comment": "Braces",
+            "name": "punctuation.section.block.mango",
+            "match": "[{}]"
+        },
+        {
+            "comment": "Parentheses and brackets",
+            "name": "punctuation.section.group.mango",
+            "match": "[()\\[\\]]"
+        },
+        {
+            "comment": "Property assignment colon",
+            "name": "punctuation.separator.key-value.mango",
+            "match": ":"
+        },
+        {
+            "comment": "Commas",
+            "name": "punctuation.separator.comma.mango",
+            "match": ","
+        }
+    ]
+}
