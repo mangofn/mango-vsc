@@ -9,29 +9,95 @@
             "match": "//.*$"
         },
         {
-            "comment": "General Language Keywords",
-            "name": "keyword.control.mango",
-            "match": "\\b(let|function)\\b"
+            "comment": "Function definitions",
+            "match": "\\b(function)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.mango"
+                },
+                "2": {
+                    "name": "entity.name.function.mango"
+                }
+            }
         },
         {
-            "comment": "UI Element Keywords",
-            "name": "keyword.control.element.mango",
-            "match": "\\b(window|row|column|button|text|textbox|checkbox|radiobutton|toggleswitch|calendar|togglebutton)\\b"
+            "comment": "Function references after arrow operators",
+            "match": "(->)\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+            "captures": {
+                "1": {
+                    "name": "keyword.operator.arrow.mango"
+                },
+                "2": {
+                    "name": "entity.name.function.mango"
+                }
+            }
+        },
+        {
+            "comment": "Function calls with identifiers",
+            "match": "\\b(set|update)\\s*\\(\\s*([a-zA-Z_][a-zA-Z0-9_]*)",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.mango"
+                },
+                "2": {
+                    "name": "entity.name.tag.mango"
+                }
+            }
+        },
+        {
+            "comment": "ID property with value highlighting",
+            "match": "\\b(id)\\s*(:)\\s*([a-zA-Z_][a-zA-Z0-9_]*)",
+            "captures": {
+                "1": {
+                    "name": "entity.other.attribute-name.boolean.mango"
+                },
+                "2": {
+                    "name": "punctuation.separator.key-value.mango"
+                },
+                "3": {
+                    "name": "entity.name.tag.mango"
+                }
+            }
+        },
+        {
+            "comment": "ID property with quoted value highlighting",
+            "match": "\\b(id)\\s*(:)\\s*(\"[^\"]*\")",
+            "captures": {
+                "1": {
+                    "name": "entity.other.attribute-name.boolean.mango"
+                },
+                "2": {
+                    "name": "punctuation.separator.key-value.mango"
+                },
+                "3": {
+                    "name": "entity.name.tag.mango"
+                }
+            }
+        },
+        {
+            "comment": "General Language Keywords",
+            "name": "keyword.control.mango",
+            "match": "\\b(let|function|set|update)\\b"
         },
         {
             "comment": "Property Names - Dimensions",
             "name": "entity.other.attribute-name.dimension.mango",
-            "match": "\\b(width|height|margin)\\b"
+            "match": "\\b(width|height|margin|corner|border|gap)\\b"
         },
         {
             "comment": "Property Names - Text Properties",
             "name": "entity.other.attribute-name.text.mango",
-            "match": "\\b(color|bgcolor|fontfamily|fontsize|fontweight|fontstyle|lineheight|textalign|texttrim)\\b"
+            "match": "\\b(color|bgcolor|fontfamily|fontsize|fontweight|fontstyle|lineheight|textalign|texttrim|label)\\b"
+        },
+        {
+            "comment": "UI Element Keywords",
+            "name": "keyword.control.element.mango",
+            "match": "\\b(window|row|column|button|text|textbox|checkbox|radiobutton|toggleswitch|calendar|togglebutton|border)\\b"
         },
         {
             "comment": "Property Names - Boolean Properties",
             "name": "entity.other.attribute-name.boolean.mango",
-            "match": "\\b(wrap|hidden)\\b"
+            "match": "\\b(wrap|hidden|align|justify)\\b"
         },
         {
             "comment": "Font Style Values",
@@ -47,6 +113,16 @@
             "comment": "Text Trim Values",
             "name": "support.constant.texttrim.mango",
             "match": "\\b(word|character|notrim)\\b"
+        },
+        {
+            "comment": "Size Values",
+            "name": "constant.language.boolean.mango",
+            "match": "\\b(hug|fill|center)\\b"
+        },
+        {
+            "comment": "Event Handler Properties",
+            "name": "entity.other.attribute-name.event.mango",
+            "match": "\\b(onclick|onhover|onchange)\\b"
         },
         {
             "comment": "Color Values - Named Colors",

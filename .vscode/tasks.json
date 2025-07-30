@@ -59,6 +59,16 @@
 				"npm: watch-tests"
 			],
 			"problemMatcher": []
+		},
+		{
+			"type": "npm",
+			"script": "compile",
+			"group": "build",
+			"label": "npm: compile",
+			"presentation": {
+				"reveal": "silent"
+			},
+			"problemMatcher": "$esbuild"
 		}
 	]
 }
